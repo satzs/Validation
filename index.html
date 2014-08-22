@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Validations</title>
+<script src="jquery-1.9.1.js"></script>
+<style>
+#box
+{
+width:520px;
+border:1px solid #ccc;
+margin:0 auto;
+padding:20px;
+}
+label
+{
+width:150px;
+float:left;
+}
+</style>
+</head>
+<body>
+
+<!-- This Validation requires only one div id . No other settings is required -->
+
+<div id="box" >
+<h1 >Product Demo</h1>
+<form action="" method="post"  onsubmit="return check('box');">  <!-- Pass div ID to function -->
+<br /><br />
+
+<label>Product code : </label>
+<input type="text" name="product_code" id="product_code" class="form-control input" placeholder="Enter product code "/>
+<br /><br />
+<label>Product Name : </label>
+<input type="text" name="product_name" id="product_name" class="form-control input" placeholder="Enter product name "/>
+<br /><br />
+<label>Product Brand : </label>
+<input type="text" name="product_brand" id="product_brand" class="form-control input" placeholder="Enter product brand "/>
+
+<br /><br />
+<label>Product Capacity: </label>
+<input type="text" name="product_capacity" id="product_capacity" class="form-control input" placeholder="Enter product capacity "/>
+
+<br /><br />
+<label>Product Warranty : </label>
+<input type="text" name="product_warranty" id="product_warranty" class="form-control input" placeholder="Enter product brand "/>
+
+
+   <br />
+    <input type="submit" name="submit" id="submit" class="btn btn-primary btn-lg" value="Save"/>
+            <br /><br />
+</form>
+</div>
+
+
+
+
+<script>
+function check(divname)
+{
+	var sub="11";msg="This field is required";
+		$("#"+divname).find('.input').each(function(){ 
+			if($(this).val()==='') {
+				$(this).css('border-color','#B94A48');
+					if(! $(this).next('span').length){
+																				
+											$(this).after('<span style="color:#B94A48;">* '+msg+'</span>');
+									}// msg print check
+					
+							
+						sub="22";
+			 } // empty check
+			 else
+			 {
+				 
+														
+			} // fill check
+		
+		});// each end
+		
+		if(sub!="11") {return false;}
+		
+}
+</script>
+
+</body>
+
+
+
+</html>
